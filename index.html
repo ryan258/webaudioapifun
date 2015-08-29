@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Web Audio API</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+	<!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <h1>Welcome to the Web Audio API</h1>
+                <script>
+                	// Create the audio context, where the sound will live
+                	var audioContext = new AudioContext();
+
+                	// Create an oscillator node
+                	var context = new AudioContext(),
+                		oscillator = context.createOscillator();
+
+                	// Connect the oscillator to our speakers
+                	oscillator.connect(context.destination);
+
+                	// Start the oscillator now
+                	// oscillator.start(context.currentTime);
+
+                	// Stop the oscillator 3 seconds from now
+                	// oscillator.stop(context.currentTime + 3);
+
+                	// use audio file, only works on live
+                	var request = new XMLHttpRequest();
+
+                	request.open('GET', 'tunes/mediocrity.mp3', true);
+                	request.responseType = 'arraybuffer';
+
+                	request.onload = function () {
+                		var undecodedAudio = request.response;
+                	};
+
+                	request.send();
+
+                </script>
+
+
+
+
+
+                <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+                <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    This is a well that is a great spot for a business tagline or phone number for easy access!
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Heading 1</h2>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <h2>Heading 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <h2>Heading 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+... <!-- The rest is content -->
+  <header>
+    <nav>
+    </nav>
+  </header>
+  <main> <!-- there can only be one -->
+    <section><!-- Sections usually come with a header -->
+      <article></article><!-- Piece of content, can define sections of an article too -->
+      <article></article>
+    </section>
+    <section> <!-- content not directly related but provides additional info -->
+      
+    </section>
+  </main>
+  <aside>
+  
+  </aside>
+  <footer></footer>
+</body>
+</html>
