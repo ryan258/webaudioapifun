@@ -43,9 +43,24 @@
 
                 	request.onload = function () {
                 		var undecodedAudio = request.response;
+
+                		context.decodeAudioData(undecodedAudio, function (buffer) {
+                			// The contents of our mp3 are now an AudioBuffer
+                			console.log(buffer);
+                			// Create the AudioBufferSourceNode
+                			var sourceBuffer = context.createBufferSource();
+                			// Tell the AudioBufferSourceNode to use this AudioBuffer
+                			sourceBuffer.buffer = buffer; // The record is in the player and ready to play
+                			// Connect it to speakers
+                			sourceBuffer.connect(context.destination);
+                			// PLAY IT!
+                			sourceBuffer.start(context.currentTime);
+                		});
                 	};
 
                 	request.send();
+
+
 
                 </script>
 
